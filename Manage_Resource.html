@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #000, #4b0082);
+            color: white;
+            height: 100%;
+        }
+
+        .container {
+            padding: 155px;
+            max-width: 2000px;
+            margin: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 30px;
+            color: white;
+        }
+        
+        .header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .header-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .header-nav li {
+            margin-left: 20px;
+        }
+        
+        .header-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+        }
+        
+        .header-nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        
+        .home-btn {
+            background-color: #4CAF50; 
+        }
+        
+        .home-btn:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #800080;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #4b0082;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #800080;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-delete {
+            background-color: #ff0000;
+        }
+
+        .btn-delete:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #000;
+        }
+
+        footer p {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="shikshalogo.jpg" alt="Logo" class="logo">
+                <h1>Career Counseling Admin Portal</h1>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="Admin.html" class="home-btn">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Resource Title</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Universities Information</td>
+                        <td>Details about colleges, rankings, and more.</td>
+                        <td class="action-buttons">
+                            <a href="#" class="btn" onclick="updatePDF(1)">Update PDF</a>
+                            <a href="#" class="btn btn-delete" onclick="deletePDF(1)">Delete PDF</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Course Catalogs</td>
+                        <td>Browse comprehensive course catalogs.</td>
+                        <td class="action-buttons">
+                            <a href="#" class="btn" onclick="updatePDF(2)">Update PDF</a>
+                            <a href="#" class="btn btn-delete" onclick="deletePDF(2)">Delete PDF</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Competitive Exam Guides</td>
+                        <td>Access guides for competitive exams and more.</td>
+                        <td class="action-buttons">
+                            <a href="#" class="btn" onclick="updatePDF(3)">Update PDF</a>
+                            <a href="#" class="btn btn-delete" onclick="deletePDF(3)">Delete PDF</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Internships and Certifications</td>
+                        <td>Discover internships to enhance skills.</td>
+                        <td class="action-buttons">
+                            <a href="#" class="btn" onclick="updatePDF(4)">Update PDF</a>
+                            <a href="#" class="btn btn-delete" onclick="deletePDF(4)">Delete PDF</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Industry Insights</td>
+                        <td>Stay updated with the latest industry trends.</td>
+                        <td class="action-buttons">
+                            <a href="#" class="btn" onclick="updatePDF(5)">Update PDF</a>
+                            <a href="#" class="btn btn-delete" onclick="deletePDF(5)">Delete PDF</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Career Counseling. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function updatePDF(resourceId) {
+            const pdfFileInput = document.createElement('input');
+            pdfFileInput.type = 'file';
+            pdfFileInput.accept = '.pdf';
+            pdfFileInput.onchange = function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    alert('Updated PDF for resource ID: ' + resourceId + ' with file: ' + file.name);
+                }
+            };
+            pdfFileInput.click(); 
+        }
+
+        function deletePDF(resourceId) {
+            const confirmation = confirm('Are you sure you want to delete the PDF for resource ID: ' + resourceId + '?');
+            if (confirmation) {
+                alert('PDF for resource ID: ' + resourceId + ' has been deleted.');
+            }
+        }
+    </script>
+</body>
+</html>

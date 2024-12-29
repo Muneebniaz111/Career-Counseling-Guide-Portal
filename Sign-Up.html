@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #000, #4b0082);
+        color: white;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: black;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .navbar ul li {
+        margin-left: 20px;
+      }
+
+      .navbar ul li a {
+        text-decoration: none;
+        color: white !important; 
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .navbar ul li a:hover 
+     {
+      color: #800080 !important;
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+      }
+
+      .form-container {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 30px;
+        border-radius: 10px;
+        width: 50%;
+        color: white;
+      }
+
+      .form-container h3 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        color: white;
+      }
+
+      .form-container input, .form-container select, .form-container button {
+        margin-bottom: 15px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .form-container button {
+        background-color: #800080;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .form-container button:hover {
+        background-color: #4b0082;
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          width: 90%;
+        }
+      }
+    </style>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="shikshalogo.jpg" alt="Career Counseling & Guide Portal Logo">
+          <div>Career Counseling & Guide Portal</div>
+        </div>
+        <ul>
+          <li><a href="Log-in.html">Log in</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div class="form-container">
+          <h3>Sign Up</h3>
+          <form action="signup.php" method="post">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" class="form-control" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact No.</label>
+              <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact No." required>
+            </div>
+            <div class="form-group">
+              <label for="Region">Province/Region</label>
+              <select id="province" class="form-control" name="province" required>
+                <option value="">Select Province/Region</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Sindh">Sindh</option>
+                <option value="Khyber Pakhtunkhwa (KP)">Khyber Pakhtunkhwa (KP)</option>
+                <option value="Balochistan">Balochistan</option>
+                <option value="Islamabad Capital Territory (ICT)">Islamabad Capital Territory (ICT)</option>
+                <option value="Azad Jammu and Kashmir (AJK)">Azad Jammu and Kashmir (AJK)</option>
+                <option value="Gilgit-Baltistan (GB)">Gilgit-Baltistan (GB)</option>
+                <option value="Federally Administered Tribal Areas (FATA)">Federally Administered Tribal Areas (FATA)</option>
+              </select>                        
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+          var password = document.getElementById('password').value;
+          var contact = document.getElementById('contact').value;
+          var email = document.getElementById('email').value;
+      
+          if (password.length < 8) {
+            alert('Password must be at least 8 characters long!');
+            event.preventDefault();
+            return;
+          }
+      
+          var contactRegex = /^[0-9]{10}$/;
+          if (!contactRegex.test(contact)) {
+            alert('Contact number must be 10 digits!');
+            event.preventDefault();
+            return;
+          }
+      
+          var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address!');
+            event.preventDefault();
+            return;
+          }
+      
+          alert('Form submitted successfully!');
+        });
+      
+        document.getElementById('password').addEventListener('input', function() {
+          var password = this.value;
+          var passwordHelp = document.createElement('div');
+          passwordHelp.id = 'passwordHelp';
+          passwordHelp.style.marginTop = '10px';
+      
+          if (password.length < 8) {
+            passwordHelp.style.color = 'red';
+            passwordHelp.textContent = 'Password is too weak.';
+          } else {
+            passwordHelp.style.color = 'green';
+            passwordHelp.textContent = 'Password is strong.';
+          }
+      
+          var existingHelp = document.getElementById('passwordHelp');
+          if (existingHelp) {
+            existingHelp.remove();
+          }
+          this.parentElement.appendChild(passwordHelp);
+        });
+      </script>      
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Counseling Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #000, #4b0082);
+      color: white;
+      height: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+  }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #000;
+  }
+  .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .navbar-brand img {
+      margin-right: 10px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #000000;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    .dashboard {
+      text-align: center;
+      padding: 10rem;
+    }
+
+    .dashboard h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #2e0d46;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card a {
+      text-decoration: none;
+      background: #800080;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .card a:hover {
+      background: #a020f0;
+    }
+
+    .logout-btn {
+      display: inline-block;
+      background: #000000;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-top: 2rem;
+    }
+
+    .logout-btn:hover {
+      background: #a020f0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="navbar-brand" href="#">
+    <img src="shikshalogo.jpg" width="50" height="50" alt="Logo">
+    Career Counseling & Guide Portal
+  </a>
+</header>
+
+<div class="dashboard">
+  <h2>Welcome to the Career Counseling Dashboard</h2>
+  <p>Explore tools and resources to guide your education and career decisions.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Resources</h3>
+      <p>Access valuable resources for career growth and education.</p>
+      <a href="resources.html">Explore Resources</a>
+    </div>
+    <div class="card">
+      <h3>Quiz</h3>
+      <p>Take career assessment quizzes to discover your strengths.</p>
+      <a href="Test.html">Start Quiz</a>
+    </div>
+    <div class="card">
+      <h3>Feedback</h3>
+      <p>Share your experience and help us improve our services.</p>
+      <a href="Feedback.html">Give Feedback</a>
+    </div>
+    <div class="card">
+      <h3>About Us</h3>
+      <p>Learn more about our mission and how we can help you.</p>
+      <a href="About us.html">Read About Us</a>
+    </div>
+    <div class="card">
+      <h3>Contact</h3>
+      <p>Get in touch with us for any inquiries or assistance.</p>
+      <a href="Contact.html">Contact Us</a>
+    </div>
+  </div>
+  <a class="logout-btn" href="Log-in.html">Logout</a>
+</div>
+
+</body>
+</html>

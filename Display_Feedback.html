@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Received - Career Counseling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #000, #4b0082);
+            color: white;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #000;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 25px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #800080;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(to bottom, #000, #4b0082);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feedback-info {
+            text-align: center;
+            padding: 193px 20px;
+        }
+
+        .feedback-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feedback-info p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .feedback-details {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a class="navbar-brand" href="#">
+                        <img src="shikshalogo.jpg" width="50" height="50" alt="Logo">
+                        Career Counseling & Guide Portal
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="Admin.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="feedback-info">
+                <h2>Feedback Received</h2>
+                <h1>Thank you for your feedback!</h1>
+                <p>We appreciate you taking the time to share your thoughts with us. Here's a summary of your submission:</p>
+
+                <div class="feedback-details">
+                    <h3>Full Name:</h3>
+                    <p id="display-name"></p>
+
+                    <h3>Email Address:</h3>
+                    <p id="display-email"></p>
+
+                    <h3>Your Feedback:</h3>
+                    <p id="display-feedback"></p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Career Counseling. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const name = localStorage.getItem('feedback-name');
+            const email = localStorage.getItem('feedback-email');
+            const feedback = localStorage.getItem('feedback-message');
+
+            if (name && email && feedback) {
+                document.getElementById('display-name').textContent = name;
+                document.getElementById('display-email').textContent = email;
+                document.getElementById('display-feedback').textContent = feedback;
+            } else {
+                document.querySelector('.feedback-info').innerHTML = '<p>No feedback found. Please submit your feedback again.</p>';
+            }
+        });
+    </script>
+
+</body>
+</html>

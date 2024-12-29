@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Career Counseling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #000, #4b0082);
+            color: white;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #000;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+          .navbar-brand img {
+            margin-right: 10px;
+          }
+
+        .logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 25px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #800080;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #000, #4b0082);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .resource-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 138px 20px;
+        }
+
+        .resource {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .resource:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .resource h2 {
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+        }
+
+        .resource p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #800080;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #4b0082;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .resource {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+          
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <a class="navbar-brand" href="#">
+                  <img src="shikshalogo.jpg" width="50" height="50" alt="Logo">
+                  Career Counseling & Guide Portal
+                </a>
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="Student.html">Home</a>
+                  </li>
+                </ul>
+              </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Resources Library</h1>
+                <p>Explore a wide range of resources to support your career and education journey.</p>
+                <section class="resource-categories">
+                    <div class="resource" id="resource-1">
+                        <h2>Universities Information</h2>
+                        <p>Find details about colleges, including their rankings, locations, courses offered, and more.</p>
+                        <a href="Explore Universities.pdf" class="btn resource-link">Explore Universities</a>
+                    </div>
+            
+                    <div class="resource" id="resource-2">
+                        <h2>Course Catalogs</h2>
+                        <p>Browse comprehensive course catalogs to find programs that match your interests and goals.</p>
+                        <a href="courses.pdf" class="btn resource-link">View Courses</a>
+                    </div>
+            
+                    <div class="resource" id="resource-3">
+                        <h2>Competitive Exam Guides</h2>
+                        <p>Access guides for competitive exams, including preparation tips, syllabus details, and sample papers.</p>
+                        <a href="Prep.pdf" class="btn resource-link">Learn More</a>
+                    </div>
+            
+                    <div class="resource" id="resource-4">
+                        <h2>Internships and Certifications</h2>
+                        <p>Discover internships and certification programs to enhance your skills and gain practical experience.</p>
+                        <a href="internships.pdf" class="btn resource-link">Find Opportunities</a>
+                    </div>
+            
+                    <div class="resource" id="resource-5">
+                        <h2>Industry Insights</h2>
+                        <p>Stay updated with the latest trends and insights from various industries to guide your career choices.</p>
+                        <a href="insights.pdf" class="btn resource-link">Read Insights</a>
+                    </div>
+                </section>
+        </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Career Counseling. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

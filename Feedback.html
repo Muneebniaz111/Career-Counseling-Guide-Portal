@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Career Counseling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #000, #4b0082);
+            color: white;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #000;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+          .navbar-brand img {
+            margin-right: 10px;
+          }
+
+        .logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 25px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #800080;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(to bottom, #000, #4b0082);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 20px;
+        }
+
+        .feedback-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feedback-form p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-group button {
+            background-color: #800080;
+            color: white;
+            font-size: 1rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-group button:hover {
+            background-color: #4b0082;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .feedback-form h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a class="navbar-brand" href="#">
+                        <img src="shikshalogo.jpg" width="50" height="50" alt="Logo">
+                        Career Counseling & Guide Portal
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="Student.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <section class="feedback-form">
+                <h2>Feedback Form</h2>
+                <h1>Give Us Your Feedback</h1>
+                <p>Please fill in the form below with your feedback and suggestions:</p>
+
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback</label>
+                        <textarea id="feedback" name="feedback" placeholder="Enter your feedback here..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit">Submit Feedback</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Career Counseling. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const feedbackForm = document.querySelector("form");
+        
+            feedbackForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+        
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const feedback = document.getElementById("feedback").value.trim();
+        
+                if (!name || !email || !feedback) {
+                    alert("Please fill in all the required fields.");
+                    return;
+                }
+        
+                if (!validateEmail(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+        
+                // Save data to localStorage
+                localStorage.setItem("feedback-name", name);
+                localStorage.setItem("feedback-email", email);
+                localStorage.setItem("feedback-message", feedback);
+        
+                // Redirect to feedback display page
+                window.location.href = "";
+            });
+        
+            function validateEmail(email) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(email);
+            }
+        });
+    </script>
+</body>
+</html>

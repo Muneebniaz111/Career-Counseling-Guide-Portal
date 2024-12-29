@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(to right, #4B0082, #000000);
+        animation: backgroundAnimation 2s ease-in-out infinite alternate;
+        color: white;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        background-color: #000;
+        padding: 10px 20px;
+      }
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      .navbar-brand img {
+        margin-right: 10px;
+      }
+      .nav-link 
+      {
+        text-decoration: none;
+        color: white !important; 
+        font-weight: bold;
+        font-size: 16px;
+      }
+    
+     .nav-link:hover 
+     {
+      color: #800080 !important;
+      }
+      .contact-section {
+        padding: 50px 20px;
+        margin-top: 50px;
+      }
+      .contact-section h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .contact-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #ddd;
+      }
+      .contact-form {
+        background: #1E1E1E;
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      }
+      .form-group label {
+        font-weight: bold;
+        text-align: left;
+        display: block;
+      }
+      .form-control {
+        background: #333;
+        color: white;
+        border: 1px solid #555;
+      }
+      .form-control:focus {
+        background: #444;
+        color: white;
+        border-color: #8A2BE2;
+        box-shadow: none;
+      }
+      .btn-primary {
+        background: #8A2BE2;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+      }
+      .btn-primary:hover {
+        background: #6A1AB2;
+      }
+    </style>
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">
+        <img src="shikshalogo.jpg" width="50" height="50" alt="Logo">
+        Career Counseling & Guide Portal
+      </a>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="Student.html">Home</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <p>We are here to assist you with any inquiries or support you may need.</p>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+    <script>
+      document.querySelector('.contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.querySelector('#name').value;
+        const email = document.querySelector('#email').value;
+        const message = document.querySelector('#message').value;
+        
+        if (name && email && message) {
+          const contactData = {
+            name: name,
+            email: email,
+            message: message
+          };
+          
+          localStorage.setItem('contactData', JSON.stringify(contactData));
+          
+          alert('Your message has been successfully submitted!');
+          
+          document.querySelector('#name').value = '';
+          document.querySelector('#email').value = '';
+          document.querySelector('#message').value = '';
+        } else {
+          alert('Please fill out all fields before submitting.');
+        }
+      });           
+    </script>
+  </body>
+</html>

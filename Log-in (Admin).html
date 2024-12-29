@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #000, #4b0082); 
+        color: white;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: black;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .navbar ul li {
+        margin-left: 20px;
+      }
+
+      .navbar ul li a {
+        text-decoration: none;
+        color: white !important;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        padding: 40px;
+      }
+
+      .left-section {
+        max-width: 50%;
+      }
+
+      .left-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .left-section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+      }
+
+      .right-section {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 30px;
+        border-radius: 10px;
+        width: 30%;
+      }
+
+      .right-section h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .right-section form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .right-section input {
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .right-section button {
+        padding: 10px;
+        background-color: #800080; 
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .right-section button:hover {
+        background-color: #4b0082; 
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .left-section, .right-section {
+          max-width: 100%;
+          width: 90%;
+        }
+      }
+    </style>
+    <title>Log-in (Admin)</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="shikshalogo.jpg" alt="Career Counseling & Guide Portal Logo">
+          <div>Career Counseling & Guide Portal</div>
+        </div>
+        <ul>
+          <li><a href="Log-in.html">Main</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div class="left-section">
+          <h1>Welcome, Administrator</h1>
+          <p>
+            Manage the Career Counseling & Guide Portal effectively with ease and control. 
+            Review user activities, update information, and ensure a seamless experience for students and job seekers.
+          </p>
+        </div>
+        <div class="right-section">
+          <h2>Log in (Admin)</h2>
+          <form action="Log-in (admin).php" method="post">
+            <input type="email" placeholder="Email" name="email" aria-label="Email Address" required>
+            <input type="password" placeholder="Password" name="password" aria-label="Password" required>
+            <button type="submit">Log in</button>
+        </form>
+        </div>
+      </div>
+    </div>
+      <script>
+        var validCredentials = [
+          { email: "muneeb122@gmail.com", password: "abcd123!" },
+          { email: "muzzamil012@gmail.com", password: "qwer123@" },
+          { email: "zaeem028@gmail.com", password: "asdf12#$" },
+          { email: "mohsin005@gmail.com", password: "abcd12^!" }
+        ];
+      
+        function validateLoginForm() {
+          var email = document.querySelector('[name="email"]').value;
+          var password = document.querySelector('[name="password"]').value;
+      
+          if (email === "" || password === "") {
+            alert("Both email and password are required.");
+            return false;
+          }
+          var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+          }
+          var isValid = false;
+          for (var i = 0; i < validCredentials.length; i++) {
+            if (validCredentials[i].email === email && validCredentials[i].password === password) {
+              isValid = true;
+              break;
+            }
+          }
+          if (!isValid) {
+            alert("Invalid email or password. Please try again.");
+            return false;
+          }
+
+          window.location.href = "Admin.html";
+          return false; 
+        }
+      
+        document.querySelector("form").onsubmit = function(event) {
+          if (!validateLoginForm()) {
+            event.preventDefault();
+          }
+        };
+      </script>
+
+  </body>
+</html>
